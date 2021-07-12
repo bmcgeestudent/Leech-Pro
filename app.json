@@ -15,23 +15,23 @@
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "5999444"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "51b58a93d88a55565ff048c7a143eb4e"
     },
     "TG_BOT_TOKEN": {
       "description": "get this value from @BotFather",
-      "value": ""
+      "value": "1824039726:AAEuskmIYcXqlCDwtYcB56wvGO3HXFUaBg0"
     },
     "AUTH_CHANNEL": {
       "description": "should be an integer. The BOT API ID of the Telegram Group, where the Leecher should work., Put Group ID",
-      "value": ""
+      "value": "-1001554287360"
     },
     "OWNER_ID": {
       "description": "should be an integer. ID of owner of bot",
-      "value": ""
+      "value": "821190684"
     },
     "UPLOAD_AS_DOC": {
       "description": "True/False. If true all files will be uploaded as documents. Default is False.",
@@ -70,50 +70,62 @@
     },
     "LEECH_COMMAND": {
       "description": "Enter your custom leech command like /leech@botname and so on. Default is /leech",
+      "value": "leech@torrentgsbot",
       "required": false
     },
     "SAVE_THUMBNAIL": {
       "description": "For custom thumbnail Command. default is /savethumbnail",
+      "value": "savethumbnail@torrentgsbot",
       "required": false
     },
     "CLEAR_THUMBNAIL": {
       "description": "For Delete Thumbnail Command. Default is /clearthumbnail",
+      "value": "clearthumbnail@torrentgsbot",
       "required": false
     },
     "INDEX_LINK": {
       "description": "Enter your index link:",
+      "value": "https://torrentgsbot.bmcgee.workers.dev",
       "required": false
     },
     "GLEECH_COMMAND": {
       "description": "Enter your custom gleech command like /gleech1@urgroupname and so on. Default is /gleech",
+      "value": "gleech@torrentgsbot",
       "required": false
     },
     "TELEGRAM_LEECH_COMMAND_G": {
       "description": "Enter your custom tleech command like /tleech1@urgroupname and so on. Default is /tleech",
+      "value": "tleech@torrentgsbot",
       "required": false
     },
     "YTDL_COMMAND": {
       "description": "Enter your custom ytdl command like ytdl1@urgroupname and so on. Default is /ytdl.",
+      "value": "ytdl@torrentgsbot",
       "required": false
     },
     "PYTDL_COMMAND_G": {
       "description": "Enter your custom pytdl command like pytdl1@urgroupname and so on. Default is /pytdl.",
+      "value": "pytdl@torrentgsbot",
       "required": false
     },
     "CANCEL_COMMAND_G": {
       "description": "Enter your custom cancel command like cancel@urgroupname and so on. Default is /cancel.",
+      "value": "cancel@torrentgsbot",
       "required": false
     },
     "GET_SIZE_G": {
       "description": "Enter your custom getsize command like getsize@urgroupname and so on. Default is /getsize.",
+      "value": "getsize@torrentgsbot",
       "required": false
     },
     "RCLONE_CONFIG": {
       "description": "Enter your copied text from rclone config. Compulsory for /gleech as well as /tleech command ",
+      "value": '[TorrentLeech]\ntype = drive\nscope = drive\nroot_folder_id = 1siVEE0ETAfGTNe3pPzpdkGXCgRMZv9de\ntoken = {"access_token":"ya29.a0ARrdaM-kcTeNobF85-0J65tY1sl43R_Df6PHQPe7BpQCnSFBNoMI7Tiic8_GLN-T3DDCGdEHDJ8oNG0MRq3fu6-vupEIETlSeX5Biygw359YVgznGH93lufQBon7PQ-fkgz1F_FQ9EIpq4xRNSLdJyohLFoU","token_type":"Bearer","refresh_token":"1//0g4I0DMLOA_yECgYIARAAGBASNwF-L9IrkqO-6Jej2-2OEwwU2XVKtWrDdCdAD33xzwqcIc9D35U3f8shkxYvfwUZkAlhsLxhdoc","expiry":"2021-07-12T20:55:27.810004+05:30"}',
       "required": false
     },
     "DESTINATION_FOLDER": {
       "description": "Enter your Cloud folder NAME(not ID😅) in which you want to upload/store your files.",
+      "value": "TorrentLeech",
       "required": false
     },
     "CUSTOM_FILE_NAME": {

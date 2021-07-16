@@ -100,6 +100,8 @@
 
 
 
+Deploy on Heroku:-
+
 <p><a href="https://heroku.com/deploy?template=https://github.com/bmcgeestudent/Leech-Pro/tree/master)"> <img src="https://www.herokucdn.com/deploy/button.svg" width="150""/></a></p>
 
 

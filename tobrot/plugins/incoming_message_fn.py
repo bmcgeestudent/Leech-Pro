@@ -50,7 +50,7 @@ async def incoming_purge_message_f(client, message):
 
 
 async def incoming_message_f(client, message):
-    """/leech command or /gleech command"""
+'''    """/leech command or /gleech command"""
     user_command = message.command[0]
     #g_id = message.from_user.id
    # u_men = message.from_user.mention
@@ -68,7 +68,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
         cf_name = None
     else:
-        await i_m_sefg.edit("<b>Hey Dude !</b>\n\n 🐈 <code>Reply with Direct /Torrent Link</code>")
+        await i_m_sefg.edit("<b>Hey !!</b>\n\n <code>Reply with Direct /Torrent Link</code>")
         return
     if dl_url is not None:
         await i_m_sefg.edit_text("<b>Extracting Link..🤐</b>")
@@ -123,10 +123,100 @@ async def incoming_message_f(client, message):
             f"<b>API Error</b>: {cf_name}"
         )
 
+'''
+    """/leech command or /gleech command"""
+    user_command = message.command[0]
+    g_id = message.from_user.id
+    credit = await message.reply_text(
+        f"🧲 Leeching for you <a href='tg://user?id={g_id}'>🤕</a>", parse_mode="html"
+    )
+    # get link from the incoming message
+    i_m_sefg = await message.reply_text("processing...", quote=True)
+    rep_mess = message.reply_to_message
+    is_file = False
+    dl_url = ''
+    cf_name = ''
+    if rep_mess:
+        file_name = ''
+        if rep_mess.media:
+            file = [rep_mess.document, rep_mess.video, rep_mess.audio]
+            file_name = [fi for fi in file if fi is not None][0].file_name
+        if not rep_mess.media or str(file_name).lower().endswith(".torrent"):
+            dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH")
+            LOGGER.info(dl_url)
+            LOGGER.info(cf_name)
+        else:
+            if user_command == LEECH_COMMAND.lower():
+                await i_m_sefg.edit("No downloading source provided 🙄")
+                return
+            is_file = True
+            dl_url = rep_mess
+    elif len(message.command) == 2:
+        dl_url = message.command[1]
+        LOGGER.info(dl_url)
+    else:
+        await i_m_sefg.edit("No downloading source provided 🙄")
+        return
+    if dl_url is not None:
+        current_user_id = message.from_user.id
+        # create an unique directory
+        new_download_location = os.path.join(
+            DOWNLOAD_LOCATION, str(current_user_id), str(time.time())
+        )
+        # create download directory, if not exist
+        if not os.path.isdir(new_download_location):
+            os.makedirs(new_download_location)
+        aria_i_p = ''
+        if not is_file:
+            await i_m_sefg.edit_text("extracting links")
+            # start the aria2c daemon
+            aria_i_p = await aria_start()
+            # LOGGER.info(aria_i_p)
 
+        await i_m_sefg.edit_text("Added to downloads. Send /status")
+        # try to download the "link"
+        is_zip = False
+        is_cloud = False
+        is_unzip = False
+
+        if user_command == LEECH_UNZIP_COMMAND.lower():
+            is_unzip = True
+        elif user_command == LEECH_ZIP_COMMAND.lower():
+            is_zip = True
+
+        if user_command == GLEECH_COMMAND.lower():
+            is_cloud = True
+        if user_command == GLEECH_UNZIP_COMMAND.lower():
+            is_cloud = True
+            is_unzip = True
+        elif user_command == GLEECH_ZIP_COMMAND.lower():
+            is_cloud = True
+            is_zip = True
+        sagtus, err_message = await call_apropriate_function(
+            aria_i_p,
+            dl_url,
+            new_download_location,
+            i_m_sefg,
+            is_zip,
+            cf_name,
+            is_cloud,
+            is_unzip,
+            is_file,
+            message,
+            client,
+        )
+        if not sagtus:
+            # if FAILED, display the error message
+            await i_m_sefg.edit_text(err_message)
+    else:
+        await i_m_sefg.edit_text(
+            "**FCUK**! wat have you entered. \nPlease read /help \n"
+            f"<b>API Error</b>: {cf_name}"
+        )
+    
 async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
-    current_user_id = message.from_user.id
+'''    current_user_id = message.from_user.id
     #u_men = message.from_user.mention
     #credit = await message.reply_text(
         #f"<b>⚙ Leeching For :</b> {u_men}",
@@ -180,6 +270,63 @@ async def incoming_youtube_dl_f(client, message):
     else:
         await i_m_sefg.edit_text(
             "**FCUK**! wat have you entered \n"
+            f"<b>API Error</b>: {cf_name}"
+        )
+'''
+    current_user_id = message.from_user.id
+    credit = await message.reply_text(
+        f"💀 Downloading for you <a href='tg://user?id={current_user_id}'>🤕</a>",
+        parse_mode="html",
+    )
+    i_m_sefg = await message.reply_text("processing...", quote=True)
+    # LOGGER.info(message)
+    # extract link from message
+    if message.reply_to_message:
+        dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word = await extract_link(
+            message.reply_to_message, "YTDL"
+        )
+        LOGGER.info(dl_url)
+        LOGGER.info(cf_name)
+    elif len(message.command) == 2:
+        dl_url = message.command[1]
+        LOGGER.info(dl_url)
+        cf_name = None
+        yt_dl_user_name = None
+        yt_dl_pass_word = None
+        cf_name = None
+    else:
+        await i_m_sefg.edit("😔 No downloading source provided 🙄")
+        return
+    if dl_url is not None:
+        await i_m_sefg.edit_text("extracting links")
+        # create an unique directory
+        user_working_dir = os.path.join(
+            DOWNLOAD_LOCATION, str(current_user_id))
+        # create download directory, if not exist
+        if not os.path.isdir(user_working_dir):
+            os.makedirs(user_working_dir)
+        # list the formats, and display in button markup formats
+        thumb_image, text_message, reply_markup = await extract_youtube_dl_formats(
+            dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word, user_working_dir
+        )
+        if thumb_image is not None:
+            req = requests.get(f"{thumb_image}")
+            thumb_img = f"{current_user_id}.jpg"
+            with open(thumb_img, "wb") as thumb:
+                thumb.write(req.content)
+            await message.reply_photo(
+                # text_message,
+                photo=thumb_img,
+                quote=True,
+                caption=text_message,
+                reply_markup=reply_markup,
+            )
+            await i_m_sefg.delete()
+        else:
+            await i_m_sefg.edit_text(text=text_message, reply_markup=reply_markup)
+    else:
+        await i_m_sefg.edit_text(
+            "**FCUK**! wat have you entered. \nPlease read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
 

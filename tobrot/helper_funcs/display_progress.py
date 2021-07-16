@@ -66,7 +66,7 @@ class Progress:
             )
             await self._client.stop_transmission()
 
-'''        if round(diff % float(EDIT_SLEEP_TIME_OUT)) == 0 or current == total:
+        if round(diff % float(EDIT_SLEEP_TIME_OUT)) == 0 or current == total:
             # if round(current / total * 100, 0) % 5 == 0:
             percentage = current * 100 / total
             speed = current / diff
@@ -122,6 +122,7 @@ class Progress:
                 # elapsed_time if elapsed_time != '' else "0 s",
                 estimated_total_time if estimated_total_time != "" else "0 s",
             )
+            '''
             try:
                 if not self._mess.photo:
                     await self._mess.edit_text(

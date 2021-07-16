@@ -50,7 +50,7 @@ async def incoming_purge_message_f(client, message):
 
 
 async def incoming_message_f(client, message):
-'''    """/leech command or /gleech command"""
+    """/leech command or /gleech command"""
     user_command = message.command[0]
     #g_id = message.from_user.id
    # u_men = message.from_user.mention
@@ -123,8 +123,8 @@ async def incoming_message_f(client, message):
             f"<b>API Error</b>: {cf_name}"
         )
 
-'''
-    """/leech command or /gleech command"""
+
+'''    """/leech command or /gleech command"""
     user_command = message.command[0]
     g_id = message.from_user.id
     credit = await message.reply_text(
@@ -213,10 +213,11 @@ async def incoming_message_f(client, message):
             "**FCUK**! wat have you entered. \nPlease read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
-    
+'''
+
 async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
-'''    current_user_id = message.from_user.id
+    current_user_id = message.from_user.id
     #u_men = message.from_user.mention
     #credit = await message.reply_text(
         #f"<b>⚙ Leeching For :</b> {u_men}",
@@ -329,7 +330,7 @@ async def incoming_youtube_dl_f(client, message):
             "**FCUK**! wat have you entered. \nPlease read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
-
+'''
 
 # playlist
 async def g_yt_playlist(client, message):

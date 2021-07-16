@@ -15,22 +15,27 @@
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
+      "required": false,
       "value": ""
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
+      "required": false,
       "value": ""
     },
     "TG_BOT_TOKEN": {
       "description": "get this value from @BotFather",
+      "required": false,
       "value": ""
     },
     "AUTH_CHANNEL": {
       "description": "should be an integer. The BOT API ID of the Telegram Group, where the Leecher should work., Put Group ID",
+      "required": false,
       "value": ""
     },
     "OWNER_ID": {
       "description": "should be an integer. ID of owner of bot",
+      "required": false,
       "value": ""
     },
     "UPLOAD_AS_DOC": {

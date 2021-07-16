@@ -66,7 +66,7 @@ class Progress:
             )
             await self._client.stop_transmission()
 
-        if round(diff % float(EDIT_SLEEP_TIME_OUT)) == 0 or current == total:
+'''        if round(diff % float(EDIT_SLEEP_TIME_OUT)) == 0 or current == total:
             # if round(current / total * 100, 0) % 5 == 0:
             percentage = current * 100 / total
             speed = current / diff
@@ -89,6 +89,38 @@ class Progress:
                 # elapsed_time if elapsed_time != '' else "0 s",
                 estimated_total_time if estimated_total_time != "" else "0 s",             
             #tmp += "\n│"+"\n╰── ⌊ @GopalSaraf ⌉"
+            )
+'''
+            if round(diff % float(EDIT_SLEEP_TIME_OUT)) == 0 or current == total:
+            # if round(current / total * 100, 0) % 5 == 0:
+            percentage = current * 100 / total
+            speed = current / diff
+            elapsed_time = round(diff) * 1000
+            time_to_completion = round((total - current) / speed) * 1000
+            estimated_total_time = time_to_completion
+
+            elapsed_time = TimeFormatter(milliseconds=elapsed_time)
+            estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
+
+            progress = "[{0}{1}] \nP: {2}%\n".format(
+                "".join(
+                    [FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]
+                ),
+                "".join(
+                    [
+                        UN_FINISHED_PROGRESS_STR
+                        for i in range(20 - math.floor(percentage / 5))
+                    ]
+                ),
+                round(percentage, 2),
+            )
+
+            tmp = progress + "{0} of {1}\nSpeed: {2}/s\nETA: {3}\n".format(
+                humanbytes(current),
+                humanbytes(total),
+                humanbytes(speed),
+                # elapsed_time if elapsed_time != '' else "0 s",
+                estimated_total_time if estimated_total_time != "" else "0 s",
             )
             try:
                 if not self._mess.photo:

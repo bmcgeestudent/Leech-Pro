@@ -93,7 +93,7 @@ async def upload_to_tg(
             i_m_s_g = await message.reply_text(
                 "Telegram does not support uploading this file.\n"
                 f"Detected File Size: {d_f_s} 😡\n"
-                "\n🤖 trying to split the files 🌝🌝🌚"
+                "\Now trying to split the files 🌝🌝🌚"
             )
             splitted_dir = await split_large_files(local_file_name)
             totlaa_sleif = os.listdir(splitted_dir)
@@ -217,7 +217,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         await messa_ge.reply_text(
-            f"🤖  Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}",
+            f"Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\💾 Size: {gjay}",
             reply_markup=button_markup,
         )
         os.remove(file_upload)
@@ -285,7 +285,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         await messa_ge.reply_text(
-            f"🤖  Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}",
+            f"Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\💾 Size: {gjay}",
             reply_markup=button_markup,
         )
         shutil.rmtree(file_upload)

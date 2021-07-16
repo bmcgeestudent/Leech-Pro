@@ -48,14 +48,14 @@ for imp in ["TG_BOT_TOKEN", "APP_ID", "API_HASH", "OWNER_ID", "AUTH_CHANNEL"]:
         exit()
 
 # The Telegram API things
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-APP_ID = int(os.environ.get("APP_ID", "12345"))
-API_HASH = os.environ.get("API_HASH")
-OWNER_ID = int(os.environ.get("OWNER_ID", "539295917"))
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "1855947262:AAEnLpZIwkexN51ACZcHGEP5h_p2bF-z26g")
+APP_ID = int(os.environ.get("APP_ID", "5999444"))
+API_HASH = os.environ.get("API_HASH", "51b58a93d88a55565ff048c7a143eb4e")
+OWNER_ID = int(os.environ.get("OWNER_ID", "821190684"))
 
 # Get these values from my.telegram.org
 # to store the channel ID who are authorized to use the bot
-AUTH_CHANNEL = [int(x) for x in os.environ.get("AUTH_CHANNEL", "539295917").split()]
+AUTH_CHANNEL = [int(x) for x in os.environ.get("AUTH_CHANNEL", "-1001374445001 -1001554287360").split()]
 
 # the download location, where the HTTP Server runs
 DOWNLOAD_LOCATION = "./DOWNLOADS"
@@ -98,13 +98,13 @@ GLEECH_ZIP_COMMAND = os.environ.get("GLEECH_ZIP_COMMAND", "gleechzip@torrgsbot")
 YTDL_COMMAND = os.environ.get("YTDL_COMMAND", "ytdl@torrgsbot")
 GYTDL_COMMAND = os.environ.get("GYTDL_COMMAND", "gytdl@torrgsbot")
 RCLONE_CONFIG = os.environ.get("RCLONE_CONFIG", "")
-DESTINATION_FOLDER = os.environ.get("DESTINATION_FOLDER", "Maxx TD")
-INDEX_LINK = os.environ.get("INDEX_LINK", "")
+DESTINATION_FOLDER = os.environ.get("DESTINATION_FOLDER", "torrgs")
+INDEX_LINK = os.environ.get("INDEX_LINK", "https://torrgs.bmcgee.workers.dev")
 TELEGRAM_LEECH_COMMAND = os.environ.get("TELEGRAM_LEECH_COMMAND", "tleech@torrgsbot")
 TELEGRAM_LEECH_UNZIP_COMMAND = os.environ.get(
     "TELEGRAM_LEECH_UNZIP_COMMAND", "textract@torrgsbot"
 )
-CANCEL_COMMAND_G = os.environ.get("CANCEL_COMMAND_G", "cancel@torrgsbot")
+CANCEL_COMMAND_G = os.environ.get("CANCEL_COMMAND_G", "cancel")
 GET_SIZE_G = os.environ.get("GET_SIZE_G", "getsize@torrgsbot")
 STATUS_COMMAND = os.environ.get("STATUS_COMMAND", "status@torrgsbot")
 SAVE_THUMBNAIL = os.environ.get("SAVE_THUMBNAIL", "savethumbnail@torrgsbot")
@@ -119,6 +119,7 @@ RENEWME_COMMAND = os.environ.get("RENEWME_COMMAND", "renewme")
 RENAME_COMMAND = os.environ.get("RENAME_COMMAND", "rename")
 TOGGLE_VID = os.environ.get("TOGGLE_VID", "upload_vid")
 TOGGLE_DOC = os.environ.get("TOGGLE_DOC", "upload_doc")
+HELP_COMMAND = os.environ.get("HELP_COMMAND", "help@torrgsbot")
 BOT_START_TIME = time.time()
 # dict to control uploading and downloading
 gDict = defaultdict(lambda: [])

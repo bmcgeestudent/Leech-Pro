@@ -1,14 +1,4 @@
-![MAXX LEECH V2](https://telegra.ph/file/af8f0596124714a17e4e2.png)
-
-👉 [Orginal Repository](https://github.com/gautamajay52/TorrentLeech-Gdrive)
-
-![Maxx](https://telegra.ph/file/d18fa7fa33f26f733adb9.png)
-
-#<b>Don't Kill Heroku please ☹️</b>
-
-[![MAXX LEECH](https://telegra.ph/file/29d788a656dd517eafd0a.png)](https://telegram.dog/MaxxBots)
-
-
+**Telegram Leecher Bot**
 
 # Benefits :-
     ✓ Google Drive link cloning using gclone.(wip)
@@ -29,7 +19,6 @@
     ✓ Changing rclone destination config on fly (By using `/rlcone` in private mode)
     ✓
 
-[![Maxx](https://telegra.ph/file/f3f3b950c2904756bb201.png)](https://t.me/MaxxRiderz) 👇
 
 ##### Mandatory Variables
 
@@ -44,7 +33,6 @@
 * `OWNER_ID`: ID of the bot owner, He/she can be abled to access bot in bot only mode too(private mode).
 
 
-[![Maxx](https://telegra.ph/file/7e3a50f29f871defe0bcb.png)](https://t.me/MaxxBots)
 
 ##### Optional Configuration Variables
 
@@ -110,14 +98,6 @@
 
 * `DESTINATION_FOLDER`: Name of your folder in ur respective drive where you want to upload the files using the bot.
 
-[![Maxx](https://telegra.ph/file/3066ec5102c94b8135e09.png)](https://t.me/MaxxBotChat)
-
-🔴 <b> Currently Support HEORKO . But not permanent ☹️🤧 Coz Heroku won't allow Torrent Things</b>.
-
-## ARE YOU NEW ??? Then READ Full 👉 [Instructions](https://GitHub.com/MaxxRider/About-Leech)
-
-
-🤧 <b> Before Deploy 𝗣𝗹𝗲𝗮𝘀𝗲 𝗛𝗶𝘁 𝗦𝘁𝗮𝗿 ★ else you are Gay</b>
 
 
 <p><a href="https://heroku.com/deploy?template=https://github.com/bmcgeestudent/Leech-Pro/tree/master)"> <img src="https://www.herokucdn.com/deploy/button.svg" width="150""/></a></p>

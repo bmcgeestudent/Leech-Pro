@@ -105,7 +105,7 @@ TELEGRAM_LEECH_UNZIP_COMMAND = os.environ.get(
     "TELEGRAM_LEECH_UNZIP_COMMAND", "textract@torrgsbot"
 )
 CANCEL_COMMAND_G = os.environ.get("CANCEL_COMMAND_G", "cancel")
-GET_SIZE_G = os.environ.get("GET_SIZE_G", "getsize@torrgsbot")
+GET_SIZE_G = os.environ.get("GET_SIZE_G", "getsize")
 STATUS_COMMAND = os.environ.get("STATUS_COMMAND", "status@torrgsbot")
 SAVE_THUMBNAIL = os.environ.get("SAVE_THUMBNAIL", "savethumbnail@torrgsbot")
 CLEAR_THUMBNAIL = os.environ.get("CLEAR_THUMBNAIL", "clearthumbnail@torrgsbot")

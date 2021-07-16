@@ -249,3 +249,31 @@ async def upload_log_file(client, message):
     g = await AdminCheck(client, message.chat.id, message.from_user.id)
     if g:
         await message.reply_document("Torrentleech-Gdrive.txt")
+
+async def help_message_f(client, message):
+    aria_i_p = await aria_start()
+    
+    msg = ("""📖 **Help**
+    
+**Following are the commands and its description:**
+/status - to see status of bot
+/leech - leech to telegram
+/gleech - leech to drive
+/ytdl - leech from youtube to telegram
+/gytdl - leech from youtube to drive
+/tleech - leech from telegram to drive
+/rename - to rename telegram files
+/gleechunzip - unarchive to drive
+/gleechzip - archive to drive
+/leechunzip - unarchive to telegram
+/leechzip - archive to telegram
+/tleechunzip - unarchive from telegram to drive
+
+Reply above commands to messages..!
+**THANK YOU!**
+- by @GopalSaraf
+😊
+""")
+   
+    LOGGER.info(msg)
+    await message.reply_text(msg, quote=True)

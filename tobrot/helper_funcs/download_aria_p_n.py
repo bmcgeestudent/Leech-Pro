@@ -113,7 +113,7 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
     except Exception as e:
         return (
             False,
-            "**FAILED** \n" + str(e) + " \n<b> Your link is Dead 🐈</b>",
+            "**FAILED** \n" + str(e) + " \n<b> Your link is Dead..</b>",
         )
     else:
         return True, "" + download.gid + ""
@@ -138,7 +138,7 @@ def add_torrent(aria_instance, torrent_file_path):
                 False,
                 "**FAILED** \n"
                 + str(e)
-                + " \n<b> Your Link is Dead 🐈</b>",
+                + " \n<b> Your Link is Dead..</b>",
             )
         else:
             return True, "" + download.gid + ""
@@ -369,11 +369,11 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
             LOGGER.info(
-                f"<b> Leechd Successfully</b>: `{file.name} ({file.total_length_string()})` 🤒"
+                f"<b>Leeched Successfully</b>: `{file.name} ({file.total_length_string()})` 🤒"
             )
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await event.edit(
-                f"<b>Leech Successfully</b>:\n\n📙 <b>File Name</b>: \n`{file.name}`\n\n📀 <b>Total Size</b>: `〘{file.total_length_string()}〙`"
+                f"<b>Leeched Successfully</b>:\n\n📙 <b>File Name</b>: \n`{file.name}`\n\n💾 <b>Total Size</b>: `〘{file.total_length_string()}〙`"
             )
             return True
     except aria2p.client.ClientException:
